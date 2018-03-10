@@ -1,0 +1,6 @@
+[Desktop Entry]
+Version=1.0
+Name=Flexyflex (C) 
+Exec=/opt/flexyflex-c/flexyflex
+Terminal=true
+Type=Application
