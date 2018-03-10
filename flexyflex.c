@@ -3,6 +3,7 @@
 int main()
 {
 	menu(options,options_length);
-	getchar();
+	printf("%s\n","Press any key to continue.");	
+	ask();
 	return 0;
 }

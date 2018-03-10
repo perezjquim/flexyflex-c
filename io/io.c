@@ -44,10 +44,18 @@ void menu(menu_option options[], size_t options_length)
 	}
 	drawFooter(HEADER_LABEL);
 	int selected = ask();
-	if(selected > 0 && selected <= options_length)
+	if(selected == 0) 
 	{
-		options[selected-1].callback();
-		getchar();
+		return;
+	}
+	else
+	{
+		if(selected >= 0 && selected <= options_length)
+		{
+			options[selected-1].callback();
+			printf("\n%s\n","Press any key to continue.");							
+			ask();
+		}
 	}
 	menu(options,options_length);
 }
