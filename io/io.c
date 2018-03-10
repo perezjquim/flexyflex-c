@@ -1,4 +1,4 @@
-#include "flexyflex.h"
+#include "../flexyflex.h"
 
 void clear()
 {

@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "layout.h"
-#include "io.h"
+#include "config/config.h"
+#include "io/io.h"
+#include "options/options.h"
 
 
 
