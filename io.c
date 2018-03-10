@@ -34,28 +34,20 @@ int ask()
 	return atoi(c);
 }
 
-void bosta() { printf("bosta"); }
-void bosta2() { printf("bosta2"); }
-menu_option f[2] = 
-{
-	{ "ola", &bosta },
-	{ "ola2", &bosta2 }  
-};
-
-void menu()
+void menu(menu_option options[], size_t options_length)
 {
 	clear();
 	drawHeader(HEADER_LABEL);
-	for(int i = 0; i < sizeof(f)/sizeof(menu_option); i++)
+	for(int i = 0; i < options_length; i++)
 	{
-		printf("%d) %s\n",i+1,f[i].label);
+		printf("%d) %s\n",i+1,options[i].label);
 	}
 	drawFooter(HEADER_LABEL);
 	int selected = ask();
-	if(selected > 0 && selected <= sizeof(f)/sizeof(menu_option))
+	if(selected > 0 && selected <= options_length)
 	{
-		f[selected-1].callback();
+		options[selected-1].callback();
 		getchar();
 	}
-	menu();
+	menu(options,options_length);
 }
